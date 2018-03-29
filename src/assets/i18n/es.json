@@ -1,4 +1,37 @@
 {
-  "Pages":  "Login"
-
+  "Pages": {
+    "Login": {
+      "title": "Login",
+      "email": "Tu email",
+      "email-error": "Introduce un email correcto",
+      "password": "Tu contraseña",
+      "password-error": "Tu contraseña necesita más de 6 caracteres",
+      "login": "Acceder",
+      "create": "Crear cuenta",
+      "forgot": "He olvidado mi contraseña"
+    },
+    "ResetPassword": {
+      "title": "Cambiar contraseña",
+      "email": "Tu email",
+      "email-error": "Introduce un email correcto",
+      "submit": "Cambia tu contraseña"
+    },
+    "Signup": {
+      "title": "Registro",
+      "email": "Email",
+      "email-desc": "Tu email",
+      "email-error": "Introduce un email correcto",
+      "password" : "Contraseña",
+      "password-desc": "Tu contraseña",
+      "password-error": "Tu contraseña necesita más de 6 caracteres",
+      "name": "Nombre",
+      "name-desc": "Tu nombre",
+      "surname": "Apellido",
+      "surname-dec": "Tu apellido",
+      "submit": "Crear cuenta"
+    }
+  },
+  "Sidemenu":{
+    "profile": "Perfil"
+  }
 }

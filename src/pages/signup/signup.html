@@ -7,12 +7,44 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Signup</ion-title>
+    <ion-title>{{ 'Pages.Signup.title' | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+    <ion-item>
+      <ion-label stacked>{{ 'Pages.Signup.name' | translate}}</ion-label>
+      <ion-input formControlName="name" type="text" placeholder="{{ 'Pages.Signup.name-desc' | translate}}">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>{{ 'Pages.Signup.surname' | translate}}</ion-label>
+      <ion-input formControlName="surname" type="text" placeholder="Your surname">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>{{ 'Pages.Signup.email' | translate}}</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="{{ 'Pages.Signup.email-desc' | translate}}" [class.invalid]="!signupForm.controls.email.valid && blur">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+      <p>{{ 'Pages.Signup.email-error' | translate}}</p>
+    </ion-item>
 
+    <ion-item>
+      <ion-label stacked>{{ 'Pages.Signup.password' | translate}}</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="{{ 'Pages.Signup.password-desc' | translate}}" [class.invalid]="!signupForm.controls.password.valid && blur">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+      <p>{{ 'Pages.Signup.password-error' | translate}}</p>
+    </ion-item>
+
+    <button ion-button block type="submit" [disabled]="!signupForm.valid">
+      {{ 'Pages.Signup.submit' | translate}}
+    </button>
+  </form>
 </ion-content>
